@@ -36,5 +36,41 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    // Declaração do tabuleiro 5x5, inicializado com 0 (marcando espaços vazios)
+    int tabuleiro[5][5] = { {0, 0, 0, 0, 0},
+                            {0, 0, 0, 0, 0},
+                            {0, 0, 0, 0, 0},
+                            {0, 0, 0, 0, 0},
+                            {0, 0, 0, 0, 0} };
+
+    // Posicionando um navio verticalmente na coluna 0
+    for (int i = 0; i < 3; i++) {  // Ocupa as linhas (0,0), (1,0) e (2,0)
+        tabuleiro[i][0] = 1;
+    }
+
+    // Posicionando um navio horizontalmente na linha 2
+    for (int j = 1; j < 4; j++) {  // Ocupa as colunas (2,1), (2,2) e (2,3)
+        tabuleiro[2][j] = 1;
+    }
+
+    // Exibir as coordenadas dos navios
+    printf("Coordenadas dos navios:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (tabuleiro[i][j] == 1) {
+                printf("Navio na posição (%d, %d)\n", i, j);
+            }
+        }
+    }
+
+    // Exibir o tabuleiro atualizado
+    printf("\nTabuleiro:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");  // Quebra de linha para organizar a saída
+    }
+
     return 0;
 }
